@@ -37,8 +37,7 @@ class App extends Component {
       })
       .then((response) => response.json())
       .then((data) => {
-        const date = new Date().toLocaleString;
-
+        const date = new Date().toLocaleString();
         this.setState((prevState) => ({
           error: false,
           date: date,
@@ -47,7 +46,7 @@ class App extends Component {
           sunset: data.sys.sunset,
           temp: data.main.temp,
           pressure: data.main.pressure,
-          wind: data.wind,
+          wind: data.wind.speed,
         }));
       })
       .catch((err) => {
